@@ -1,0 +1,46 @@
+.header {
+  align-items: center;
+  background-color: rgba(34, 57, 127, 0.2);
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  &-image {
+    height: auto;
+    width: 80px;
+  }
+}
+
+.menu {
+  font-size: 20px;
+  font-weight: normal;
+
+  &-list {
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+
+    &-item {
+      list-style-type: none;
+
+      &-link {
+        color: var(--white);
+        cursor: pointer;
+        padding: 10px 15px;
+        text-decoration: none;
+
+        &:hover {
+          background-color: rgba(34, 57, 127, 0.2);
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}

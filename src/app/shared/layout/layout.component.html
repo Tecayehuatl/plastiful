@@ -1,6 +1,20 @@
 <div>
-  <header>
-    Header
+  <header class="header">
+    <div class="logo">
+      <a routerLink="/">
+        <img class="logo-image" src="../../../assets/images/plastiful-logo.png" alt="Plastiful logo" />
+      </a>
+    </div>
+    <div class="menu">
+      <ul class="menu-list">
+        <li class="menu-list-item">
+          <a class="menu-list-item-link" routerLink="/home">Home</a>
+        </li>
+        <li class="menu-list-item">
+          <a class="menu-list-item-link" routerLink="/about">Acerca de nosotros</a>
+        </li>
+      </ul>
+    </div>
   </header>
   <main>
     <ng-content></ng-content>
