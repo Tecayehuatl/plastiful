@@ -1,3 +1,7 @@
+.layout {
+  position: relative;
+}
+
 .header {
   align-items: center;
   background-color: rgba(34, 57, 127, 0.2);
@@ -87,6 +91,20 @@
   }
 }
 
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  &-image {
+    cursor: pointer;
+    border-radius: 50%;
+    display: block;
+    height: 60px;
+    width: 60px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -115,6 +133,16 @@
         flex-direction: column;
         text-align: center;
       }
+    }
+  }
+
+  .whatsapp {
+    bottom: 15px;
+    right: 15px;
+
+    &-image {
+      height: 50px;
+      width: 50px;
     }
   }
 }
