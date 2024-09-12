@@ -4,7 +4,7 @@
 
 .header {
   align-items: center;
-  background-color: rgba(34, 57, 127, 0.2);
+  background: linear-gradient(60deg, rgba(34, 57, 127,1) 0%, rgba(93, 164, 215, 1) 100%);
   display: flex;
   height: 100px;
   justify-content: space-between;
@@ -40,10 +40,39 @@
         cursor: pointer;
         padding: 10px 15px;
         text-decoration: none;
+        position: relative;
 
         &:hover {
           background-color: rgba(34, 57, 127, 0.2);
           border-radius: 4px;
+        }
+
+        &.no-hover {
+          &:hover {
+            background: none;
+            border: 0;
+          }
+        }
+      }
+
+      &-image {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7460%) hue-rotate(69deg) brightness(97%) contrast(108%);
+        height: 40px;
+        width: 40px;
+
+        &:hover {
+          filter: brightness(0) saturate(100%) invert(93%) sepia(22%) saturate(5%) hue-rotate(96deg) brightness(110%) contrast(78%);
+        }
+
+        &.facebook-svg {
+          background-image: url('../../../assets/images/facebook-icon.svg');
+        }
+
+        &.whatsapp-svg {
+          background-image: url('../../../assets/images/whatsapp-logo-alt-1.svg');
         }
       }
     }
@@ -76,8 +105,12 @@
       padding-top: 20px;
 
       &-icon {
-        height: 30px;
-        width: 30px;
+        background-image: url('../../../assets/images/facebook-icon.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 33px;
+        width: 33px;
       }
     }
 
@@ -96,13 +129,36 @@
   bottom: 20px;
   right: 20px;
 
+  &-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--white);
+    text-decoration: underline;
+    font-size: 16px;
+  }
+
   &-image {
-    cursor: pointer;
-    border-radius: 50%;
-    display: block;
+    background-image: url('../../../assets/images/whatsapp-logo-alt-1.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7460%) hue-rotate(69deg) brightness(97%) contrast(108%);
     height: 60px;
     width: 60px;
+
+    &:hover {
+      filter: brightness(0) saturate(100%) invert(93%) sepia(22%) saturate(5%) hue-rotate(96deg) brightness(110%) contrast(78%);
+    }
   }
+}
+
+.close {
+  display: none;
+}
+
+.burger-button {
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -114,6 +170,10 @@
     .menu-list {
       gap: 5px;
       font-size: 14px;
+
+      &-item--dn-sm {
+        display: none;
+      }
     }
   }
 
@@ -147,24 +207,110 @@
   }
 }
 
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 576px) {
   .header {
+    display: flex;
+    flex-direction: row;
+    height: 90px;
+
+    .logo-image {
+      width: 65px;
+    }
+
     .menu {
+      background: linear-gradient(60deg, rgba(34, 57, 127,1) 0%, rgba(93, 164, 215, 1) 100%);
+      bottom: 0;
+      display: none;
       font-size: 14px;
+      left: 0;
+      position: fixed;
+      right: 0;
+      top: 0;
+
 
       &-list {
-        gap: 15px;
+        flex-direction: column;
+        gap: 50px;
+        height: 80vh;
+        justify-content: center;
+        width: 100%;
 
         &-item {
           text-align: center;
+          width: 100%;
 
           &-link {
+            color: var(--white);
+            display: flex;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
             padding-left: 0px;
             padding-right: 0px;
+            width: 100%;
+          }
+
+          &--dn-sm {
+            display: block;
           }
         }
       }
+
+      &.show {
+        display: grid;
+        place-items: center;
+      }
     }
 
+    .close {
+      cursor: pointer;
+      display: block;
+      height: 32px;
+      opacity: 0.6;
+      position: absolute;
+      right: 32px;
+      top: 32px;
+      width: 32px;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &:before, &:after {
+        background-color: var(--white);
+        content: ' ';
+        height: 33px;
+        left: 15px;
+        position: absolute;
+        width: 3px;
+      }
+
+      &:before {
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+
+    .burger-button {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      height: 60px;
+      justify-content: center;
+      width: 60px;
+    }
+
+    .burger-svg {
+      width: 35px;
+    }
+  }
+
+  .whatsapp {
+    &-inner-text {
+      display: none;
+    }
   }
 }

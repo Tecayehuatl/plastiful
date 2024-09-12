@@ -1,7 +1,6 @@
 .home {
   background: linear-gradient(60deg, rgba(34, 57, 127,1) 0%, rgba(93, 164, 215, 1) 100%);
-  color:white;
-  margin-top: -100px;
+  color: var(--white);
   position: relative;
 }
 
@@ -13,19 +12,20 @@
 }
 
 .inner-header {
-  height: 100vh;
+  height: calc(100vh - 100px);
   margin: 0;
   padding: 0;
 }
 
 .waves {
+  bottom: 0;
   height: 280px;
-  margin-top: -240px;
+  position: absolute;
   width: 100%;
 }
 
 .content {
-  background-color: white;
+  background-color: var(--white);
   height:20vh;
   position:relative;
   text-align:center;
@@ -66,11 +66,14 @@
 
 @media screen and (max-width: 768px) {
   .home {
-    margin-top: -140px;
+    height: calc(100vh - 140px);
   }
 
   .waves {
     height: 140px;
-    margin-top: -120px;
   }
+}
+
+@media screen and (max-width: 576px) {
+
 }

@@ -5,19 +5,34 @@
         <img class="logo-image" src="../../../assets/images/plastiful-logo.png" alt="Plastiful logo" />
       </a>
     </div>
-    <div class="menu">
+    <div class="burger-button" (click)="toggleMenu()">
+        <svg class="burger-svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50">
+          <path d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z" fill="#ffffff"></path>
+          </svg>
+    </div>
+    <div class="menu" [ngClass]="{ 'show': isMenuShown }">
+      <div class="close" (click)="toggleMenu()"></div>
       <ul class="menu-list">
         <li class="menu-list-item">
-          <a class="menu-list-item-link" routerLink="/">Home</a>
+          <a class="menu-list-item-link" (click)="navigateTo('/')">Home</a>
         </li>
         <li class="menu-list-item">
-          <a class="menu-list-item-link" routerLink="about">Acerca de nosotros</a>
+          <a class="menu-list-item-link" (click)="navigateTo('about')">Acerca de nosotros</a>
         </li>
         <li class="menu-list-item">
-          <a class="menu-list-item-link" target="_blank" href="https://listado.mercadolibre.com.mx/_CustId_693275029?item_id=MLM1437629105&category_id=MLM191782&seller_id=693275029&client=recoview-selleritems&recos_listing=true#origin=vip&component=sellerData&typeSeller=classic">Nuestros productos</a>
+          <a class="menu-list-item-link" target="_blank" href="https://listado.mercadolibre.com.mx/_CustId_693275029?item_id=MLM1437629105&category_id=MLM191782&seller_id=693275029&client=recoview-selleritems&recos_listing=true#origin=vip&component=sellerData&typeSeller=classic">
+            Nuestros productos
+          </a>
         </li>
-        <li class="menu-list-item">
-          <a class="menu-list-item-link" target="_blank" href="https://api.whatsapp.com/send?phone=5212212794374&text=Hola%2C%20%C2%A1Como%20podemos%20ayudarte%3F%20%F0%9F%91%8B">¡Escríbenos!</a>
+        <li class="menu-list-item menu-list-item--dn-sm">
+          <a class="menu-list-item-link no-hover" target="_blank" href="https://www.facebook.com/p/Plastiful-100054641700997">
+            <div class="menu-list-item-image facebook-svg"></div>
+          </a>
+        </li>
+        <li class="menu-list-item menu-list-item--dn-sm">
+          <a class="menu-list-item-link no-hover" target="_blank" href="https://api.whatsapp.com/send?phone=5212212794374&text=Hola%2C%20%C2%A1Como%20podemos%20ayudarte%3F%20%F0%9F%91%8B">
+            <div class="menu-list-item-image whatsapp-svg"></div>
+          </a>
         </li>
       </ul>
     </div>
@@ -30,13 +45,13 @@
       <a
         href="https://www.facebook.com/p/Plastiful-100054641700997"
         target="_blank">
-        <img class="footer-social-media-icon" src="../../../assets/images/facebook-icon.png" alt="Facebook icon" />
+        <div class="footer-social-media-icon"></div>
       </a>
     </div>
     <div class="footer-social-links">
       <ul class="menu-list">
         <li class="menu-list-item">
-          <a class="menu-list-item-link" routerLink="about">Acerca de nosotros</a>
+          <a class="menu-list-item-link" (click)="navigateTo('about')">Acerca de nosotros</a>
         </li>
         <li class="menu-list-item">
           <a class="menu-list-item-link" target="_blank" href="https://listado.mercadolibre.com.mx/_CustId_693275029?item_id=MLM1437629105&category_id=MLM191782&seller_id=693275029&client=recoview-selleritems&recos_listing=true#origin=vip&component=sellerData&typeSeller=classic">Nuestros productos</a>
@@ -45,7 +60,7 @@
           <a class="menu-list-item-link" target="_blank" href="https://api.whatsapp.com/send?phone=5212212794374&text=Hola%2C%20%C2%A1Como%20podemos%20ayudarte%3F%20%F0%9F%91%8B">¡Escríbenos por whatsapp!</a>
         </li>
         <li class="menu-list-item">
-          <a class="menu-list-item-link" target="_blank" href="mailto:plastiful.insumos@gmail.com?subject=%C2%A1Me%20gustar%C3%ADa%20saber%20m%C3%A1s%20de%20sus%20productos!">Correo</a>
+          <a class="menu-list-item-link" target="_blank" href="mailto:plastiful.insumos@gmail.com?subject=%C2%A1Me%20gustar%C3%ADa%20saber%20m%C3%A1s%20de%20sus%20productos!">¡Mándanos un Correo!</a>
         </li>
       </ul>
     </div>
@@ -55,7 +70,7 @@
   </footer>
   <section class="whatsapp">
     <a class="whatsapp-link" target="_blank" href="https://api.whatsapp.com/send?phone=5212212794374&text=Hola%2C%20%C2%A1Como%20podemos%20ayudarte%3F%20%F0%9F%91%8B">
-      <img class="whatsapp-image" src="../../../assets/images/whatsapp-icon.png" alt="Whatsapp logo" />
+      <span class="whatsapp-inner-text">¡Chatea con nosotros!</span> <div class="whatsapp-image"></div>
     </a>
   </section>
 </div>
