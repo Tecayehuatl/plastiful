@@ -1,0 +1,14 @@
+<div class="gallery">
+  <section class="gallery-hero">
+    <h1 class="title">Galería</h1>
+  </section>
+  <section class="gallery-wrapper">
+    <div class="gallery-container">
+      @for (item of gallery; track $index) {
+        <div class="gallery-item" [ngStyle]="{'background-image': 'url(' + item.url + ')'}">
+          <h2 class="gallery-item-title">{{ item.name }}</h2>
+        </div>
+      }
+    </div>
+  </section>
+</div>
