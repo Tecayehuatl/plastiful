@@ -4,8 +4,8 @@
   </section>
   <section class="gallery-wrapper">
     <div class="gallery-container">
-      @for (item of gallery; track $index) {
-        <div class="gallery-item" [ngStyle]="{'background-image': 'url(' + item.url + ')'}">
+      @for (item of (gallery$ | async); track $index) {
+        <div class="gallery-item" (click)="navigateTo(item.id)" [ngStyle]="{'background-image': 'url(' + item.imageUrl + ')'}">
           <h2 class="gallery-item-title">{{ item.name }}</h2>
         </div>
       }

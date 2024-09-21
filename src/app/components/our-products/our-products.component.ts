@@ -1,10 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-
-interface GalleryItem {
-  name: string;
-  url: string;
-}
+import { ProductsService } from '../../shared/services/products.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-our-products',
@@ -14,22 +11,15 @@ interface GalleryItem {
   styleUrl: './our-products.component.scss'
 })
 export class OurProductsComponent {
-  gallery: GalleryItem[] = [
-    {
-      name: 'Sellos personalizados',
-      url: '../../../assets/images/product-1.jpg',
-    },
-    {
-      name: 'Sellos genéricos',
-      url: '../../../assets/images/product-4.jpg',
-    },
-    {
-      name: 'Filtros y refacciones',
-      url: '../../../assets/images/product-1.jpg',
-    },
-    {
-      name: 'Tapas',
-      url: '../../../assets/images/product-5.jpg',
-    },
-  ];
+
+  gallery$ = this.productsService.galleryItems$;
+
+  constructor(
+    private router: Router,
+    public productsService: ProductsService
+  ) {}
+
+  navigateTo(id: number): void {
+    this.router.navigate(['/gallery', id]);
+  }
 }

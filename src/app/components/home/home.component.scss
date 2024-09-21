@@ -1,7 +1,21 @@
 .home {
-  background: linear-gradient(60deg, rgba(34, 57, 127,1) 0%, rgba(93, 164, 215, 1) 100%);
+  background-image: var(--hero-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: var(--white);
   position: relative;
+
+  &:before {
+    background-color: rgba(0,0,0, 0.8);
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
 }
 
 .logo {

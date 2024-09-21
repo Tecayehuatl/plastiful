@@ -1,0 +1,22 @@
+  <div class="products" *ngIf="product$ | async as product">
+    <section class="products-hero">
+      <h1 class="title">
+        <a class="route-anchor" routerLink="/gallery">Galería</a> / {{ product.name }}
+      </h1>
+    </section>
+    <section class="products-wrapper">
+      <div class="products-container">
+        @for (item of product.data; track $index) {
+          @if (item.type == 'video') {
+            <div class="video-item">
+              <iframe width="560" height="315" [src]="sanitizeUrl(item.url)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
+            </div>
+          }
+          @else {
+            <div class="products-item" [ngStyle]="{'background-image': 'url(' + item.url + ')'}">
+            </div>
+          }
+        }
+      </div>
+    </section>
+  </div>

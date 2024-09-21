@@ -4,7 +4,8 @@
 
 .header {
   align-items: center;
-  background: linear-gradient(60deg, rgba(34, 57, 127,1) 0%, rgba(93, 164, 215, 1) 100%);
+  background: var(--primary);
+  background: linear-gradient(90deg, rgba(93,164,215,1) 21%, rgba(34,57,127,1) 71%);
   display: flex;
   height: 100px;
   justify-content: space-between;
@@ -16,7 +17,12 @@
 
 .logo {
   &-image {
-    height: auto;
+    background-image: var(--logo-image);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    height: 80px;
     width: 80px;
   }
 }
@@ -212,9 +218,10 @@
     display: flex;
     flex-direction: row;
     height: 90px;
+    background: linear-gradient(90deg, rgba(93,164,215,1) 21%, rgba(34,57,127,1) 96%);
 
     .logo-image {
-      width: 65px;
+      width: 73px;
     }
 
     .menu {
