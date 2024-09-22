@@ -219,6 +219,8 @@
     flex-direction: row;
     height: 90px;
     background: linear-gradient(90deg, rgba(93,164,215,1) 21%, rgba(34,57,127,1) 96%);
+    position: relative;
+    z-index: 2;
 
     .logo-image {
       width: 73px;
@@ -266,6 +268,7 @@
       &.show {
         display: grid;
         place-items: center;
+        z-index: 2;
       }
     }
 
