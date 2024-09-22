@@ -54,16 +54,6 @@
     width: 400px;
     transition: transform 0.3s ease-out;
 
-    // &:before {
-    //   background-color: rgba(0,0,0, 0.6);
-    //   bottom: 0;
-    //   content: '';
-    //   left: 0;
-    //   position: absolute;
-    //   right: 0;
-    //   top: 0;
-    // }
-
     &:hover {
       transform: scale(1.1);
     }
@@ -103,5 +93,20 @@
 
   &:hover {
     color: rgba(255,255,255, 0.8)
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .products {
+    &-item {
+      background-size: contain;
+      height: 200px;
+      width: 100%;
+    }
+  }
+
+  .title {
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }

@@ -44,14 +44,13 @@
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 4px;
-    cursor: pointer !important;
+    cursor: pointer;
     display: grid;
     height: 400px;
     padding: 20px;
     place-items: center;
     position: relative;
     width: 400px;
-    z-index: 9999;
 
     &:before {
       background-color: rgba(0,0,0, 0.6);
