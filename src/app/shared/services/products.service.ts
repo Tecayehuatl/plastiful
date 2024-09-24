@@ -48,14 +48,18 @@ export class ProductsService {
     },
     {
       id: 3,
-      name: 'Filtros y refacciones',
-      imageUrl: '../../../assets/images/product-1.jpg',
+      name: 'Medios filtrantes, filtros y refacciones',
+      imageUrl: '../../../assets/images/refacciones-y-filtros/refaccion-4.jpg',
       data: [
-        { name: 'Sello 1', url: '../../../assets/images/refacciones-y-filtros/refaccion-1.png', type: '' },
-        { name: 'Sello 1', url: '../../../assets/images/refacciones-y-filtros/refaccion-2.jpg', type: '' },
+        { name: 'Sello 1', url: '../../../assets/images/refacciones-y-filtros/refaccion-10.jpeg', type: '' },
         { name: 'Sello 1', url: '../../../assets/images/refacciones-y-filtros/refaccion-3.jpg', type: '' },
         { name: 'Sello 1', url: '../../../assets/images/refacciones-y-filtros/refaccion-4.jpg', type: '' },
-        // { name: 'Sello 1', url: '../../../assets/images/refacciones-y-filtros/refaccion-5.jpg', type: '' },
+        { name: 'Sello 1', url: '../../../assets/images/refacciones-y-filtros/refaccion-9.jpeg', type: '' },
+        { name: 'Sello 1', url: '../../../assets/images/refacciones-y-filtros/refaccion-6.jpeg', type: '' },
+        { name: 'Sello 1', url: '../../../assets/images/refacciones-y-filtros/refaccion-7.jpeg', type: '' },
+        { name: 'Sello 1', url: '../../../assets/images/refacciones-y-filtros/refaccion-8.jpeg', type: '' },
+        { name: 'Sello 1', url: '../../../assets/images/refacciones-y-filtros/refaccion-5.jpeg', type: '' },
+        { name: 'Sello 1', url: '../../../assets/images/refacciones-y-filtros/refaccion-2.jpg', type: '' },
       ],
     },
     {
